@@ -1,5 +1,33 @@
-<p>films works :)</p>
-<p>Titre : {{this.filmData.Title}}</p>
-<p>Année : {{this.filmData.Year}}</p>
+<!-- test api -->
+
+<p>test connexion API </p>
+<p>Titre : {{filmData.Title}}</p>
+<p>Année : {{filmData.Year}}</p>
 
 <img src="{{this.filmData.Poster}}"/>
+
+
+
+<!-- Formulaire -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <!-- formulaire de recherche -->
+
+            <form (submit)="searchFilm()">
+
+                <input type="text" name="title" [(ngModel)]="title">
+                <!-- <input type="submit" value="Rechercher Film"> -->
+                <!-- <ul>
+                    <li *ngFor="search" ></li>
+                </ul> -->
+
+
+            </form>
+
+
+
+
+        </div>
+    </div>
+</div>
