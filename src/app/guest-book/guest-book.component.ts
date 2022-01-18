@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-guest-book',
   templateUrl: './guest-book.component.html',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuestBookComponent implements OnInit {
 
+ 
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  commentaire(){
+    alert('ace');
+    
   }
 
 }

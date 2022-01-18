@@ -1,0 +1,23 @@
+<p>{{movie.Title | json}}</p>
+<p>{{movie.Year | json}}</p>
+
+
+<!-- Si image N/A -->
+<div *ngIf="movie.Poster == 'N/A' else afficherPosterDefaut">
+        <img src="assets/engi.jpg" alt="">
+</div>
+<ng-template #afficherPosterDefaut>
+        <img src="{{movie.Poster}}" alt="">
+
+</ng-template>
+
+
+
+
+<button (click)="getFilmDetail(movie.imdbID)">+ d'infos</button>
+<p *ngIf="filmDetail && filmDetail.Actors != 'N/A' " >Acteurs : {{filmDetail.Actors}} </p>
+<p *ngIf="filmDetail && filmDetail.Country != 'N/A'" >Pays : {{filmDetail.Country}} </p>
+<p *ngIf="filmDetail && filmDetail.Genre != 'N/A'">Genre : {{filmDetail.Genre}} </p>
+<p *ngIf="filmDetail && filmDetail.Metascore != 'N/A'" >Metascore : {{filmDetail.Metascore}} </p>
+<p *ngIf="filmDetail && filmDetail.Runtime != 'N/A'" >Duree : {{filmDetail.Runtime}} </p>
+<p *ngIf="filmDetail && filmDetail.imdbRating != 'N/A'" >imdbRating : {{filmDetail.imdbRating}} sur {{filmDetail.imdbVotes}} votes </p>

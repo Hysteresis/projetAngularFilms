@@ -1,1 +1,13 @@
-<p>guest-book  fine!</p>
+<main>
+        <h2>Livre d'or !</h2>
+        <form  (submit)="commentaire()">
+                <textarea  ngModel name="commentaire"  cols="30" rows="10"></textarea>
+    
+                <button>Poster un commentaire</button>
+
+        </form>
+
+        <app-guest-book-list ></app-guest-book-list>
+    
+    </main>
+    

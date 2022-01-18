@@ -1,10 +1,5 @@
-<!-- test api -->
-
-<p>test connexion API </p>
-<p>Titre : {{filmData.Title}}</p>
-<p>Année : {{filmData.Year}}</p>
-
-<img src="{{this.filmData.Poster}}"/>
+<!--  Le ? signifie non vide -->
+<p>{{filmData?.length}}</p>
 
 
 
@@ -13,21 +8,18 @@
     <div class="row">
         <div class="col">
             <!-- formulaire de recherche -->
-
-            <form (submit)="searchFilm()">
-
+            <form  (submit)="searchFilm()">
                 <input type="text" name="title" [(ngModel)]="title">
-                <!-- <input type="submit" value="Rechercher Film"> -->
-                <!-- <ul>
-                    <li *ngFor="search" ></li>
-                </ul> -->
-
-
+                <input type="submit" value="Rechercher">               
+                <!-- faire apparaitre l'enfant dans le parent -->
+            
             </form>
-
-
-
 
         </div>
     </div>
 </div>
+
+<ul>
+    <li *ngFor="let movie of filmData"><app-films-info [movie]="movie"></app-films-info></li>
+
+</ul>
